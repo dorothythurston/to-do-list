@@ -1,0 +1,7 @@
+<h2> Add a new list </h2>
+<%= form_for(@list) do |form| %>
+    <div>
+    <%= form.text_field :name, placeholder: "Name this List"%>
+  </div>
+  <%= form.submit "Add new List" %>
+<% end %>
