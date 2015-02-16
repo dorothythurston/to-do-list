@@ -1,0 +1,7 @@
+<h2> Add a new item to list </h2>
+<%= form_for([@list, @item]) do |form| %>
+	<%= form.text_field :name, placeholder: "Name"%>
+	<%= form.text_field :description, placeholder: "Description" %>
+	<%= form.text_field :url, placeholder: "Add a Url Image of this Item"%>
+	<%= form.submit "Create Item" %> 
+<% end %>
