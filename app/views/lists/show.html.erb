@@ -9,6 +9,7 @@
 	<%= image_tag item.url %>
 	</div>
 	<%= button_to "delete item", list_item_path(@list.id, id: item.id), method: :delete %>
+	<%= link_to "edit item", edit_list_item_path(@list.id, id: item.id) %>
 <% end %>
 <br>
 <%=link_to "add item", new_list_item_path(@list) %>
