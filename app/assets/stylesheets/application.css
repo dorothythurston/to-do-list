@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url(http://fonts.googleapis.com/css?family=Lato);
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2 {
+  color: purple;
+  }
+
+#list-name-form form input {
+  font-size: 1.5em;
+
+}
+
+.item-image img {
+  height: 200px;
+  width: auto;
+}

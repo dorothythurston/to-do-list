@@ -1,5 +1,9 @@
 <h1>Welcome</h1>
 <%= link_to 'Add new list', new_list_path%>
-<% @lists.each do |list| %>
-    <li><%= link_to list.name, list %></li>
+
+<h2>My Lists:</h2>
+<% @lists.each do |list, item| %>
+    <div class="list-name-home">
+      <%= link_to list.name, list %>
+    </div>
 <%end%>

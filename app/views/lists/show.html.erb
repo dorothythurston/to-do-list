@@ -1,13 +1,22 @@
-<h2><%= @list.name %></h2> 
-<%= link_to "edit list name", edit_list_path(@list) %>
+<div id="list-name">
+	<h2><div id="list-name-current"><%= @list.name %></div></h2>
+
+  <button id="edit-list-name">edit list name</button>
+
+	<div id="list-name-form" style="background-color:red; display: none;">
+		<%= form_for(@list) do |form| %>
+    <%= form.text_field :name, placeholder: "name"%>
+    <%= form.submit "update name" %>
+		<% end %>
+    <button id="cancel-edit-list-name">cancel</button>
+	</div>
+
 <% @items.each do |item| %>
 	<h3><%= item.name%></h3>
-	<ul>
-		<li><%= item.description%></li> 
-	</ul>
 	<div class="item-image">
 	<%= image_tag item.url %>
 	</div>
+	<p><%= item.description%></p>
 	<%= button_to "delete item", list_item_path(@list.id, id: item.id), method: :delete %>
 	<%= link_to "edit item", edit_list_item_path(@list.id, id: item.id) %>
 <% end %>
