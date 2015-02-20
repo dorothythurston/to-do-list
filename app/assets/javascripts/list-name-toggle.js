@@ -12,10 +12,8 @@ $(document).on('click','#list-name-form #cancel-edit-list-name', function () {
     $("#list_name").val(oldName);
   });
 
-$(document).ready(function() {
-  $('#list-name-form form').submit(function() {
-    $('#list-name-form').toggle();
-    $('#edit-list-name').toggle();
-    $('#list-name-current').toggle();
-  });
+$(document).on('submit','#list-name-form form', function () {
+  $('#list-name-form').toggle();
+  $('#edit-list-name').toggle();
+  $('#list-name-current').toggle();
 });

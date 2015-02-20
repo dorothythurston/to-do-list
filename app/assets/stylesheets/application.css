@@ -21,7 +21,7 @@
 }
 
 h1, h2 {
-  color: purple;
+  color: magenta;
   }
 
 #list-name-form form input {
@@ -30,6 +30,6 @@ h1, h2 {
 }
 
 .item-image img {
-  height: 200px;
+  height: 100px;
   width: auto;
 }
