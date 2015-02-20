@@ -16,21 +16,21 @@
 
 <ul>
 	<% @items.each do |item| %>
-		<li>
+		<li class="item">
 			<h3>
 				<div class="item-name-current">
 					<%= item.name%>
 				</div>
 			</h3>
+			<button class="edit-item-name">edit item name</button>
+			<div class="item-name-form" style="background-color: red; display: none;">
+				<%= form_for item, html: {class: "item_name_update_form"}, url: list_item_path(@list.id, id: item.id), method: :put do |form| %>
+				  <%= form.text_field :name %>
+				  <%= form.submit "Update Name" %>
+				<% end %>
+			</div>
+			<%= button_to "delete item", list_item_path(@list.id, id: item.id), method: :delete %>
 		</li>
-		<button class="edit-item-name">edit item name</button>
-		<div class="item-name-form" style="background-color: red; display: none;">
-			<%= form_for item, url: list_item_path(@list.id, id: item.id), method: :put do |form| %>
-			  <%= form.text_field :name %>
-			  <%= form.submit "Update Name" %>
-			<% end %>
-		</div>
-		<%= button_to "delete item", list_item_path(@list.id, id: item.id), method: :delete %>
 	<% end %>
 </ul>
 
