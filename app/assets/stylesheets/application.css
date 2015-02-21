@@ -37,6 +37,6 @@ h1, h2 {
   width: auto;
 }
 
-.item_name_update_form, .list_name_update_form {
+.item_name_update_form, .list_name_update_form, #cancel-edit-list-name, .cancel-edit-item-name {
   display: none;
 }
