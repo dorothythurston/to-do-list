@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+	respond_to :html, :js
+
 	def new
 		@item = Item.new
 		@list = List.find(params[:list_id])
@@ -27,12 +29,7 @@ class ItemsController < ApplicationController
   def update
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
-    if @item.update(item_params)
-    redirect_to @list
-    else
-      render :edit
-    end
-
+		render :nothing => true
   end
 
   def destroy
