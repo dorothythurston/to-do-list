@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
     @item.destroy
-    redirect_to @list
+		render :nothing => true
   end
 
 private

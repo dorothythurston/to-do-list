@@ -21,7 +21,7 @@
 				  <%= form.submit "Update Name" %>
 				<% end %>
 				<button class="cancel-edit-item-name">cancel</button>
-			<%= button_to "delete item", list_item_path(@list.id, id: item.id), method: :delete %>
+			<%= button_to "delete", list_item_path(@list.id, id: item.id), method: :delete %>
 		</li>
 	<% end %>
 </ul>
