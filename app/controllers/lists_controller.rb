@@ -12,7 +12,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.create(list_params)
-    redirect_to list_path(@list)
+    render @list
   end
 
   def edit

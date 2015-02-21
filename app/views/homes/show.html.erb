@@ -1,9 +1,13 @@
 <h1>Welcome</h1>
-<%= link_to 'Add new list', new_list_path%>
-
 <h2>My Lists:</h2>
-<% @lists.each do |list, item| %>
-    <div class="list-name-home">
-      <%= link_to list.name, list %>
-    </div>
-<%end%>
+<button id="add-list">+</button>
+
+<ul>
+  <li class="new_list_form">
+    <%= form_for(@list) do |form| %>
+      <%= form.text_field :name, placeholder: "name this list"%>
+      <%= form.submit "add new list" %>
+    <% end %>
+  </li>
+  <%= render @lists %>
+</ul>
