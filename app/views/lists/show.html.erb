@@ -1,34 +1,26 @@
 <%=link_to "back to dashboard", root_path%>
 <br>
 <div id="list-name">
-	<h2><div id="list-name-current"><%= @list.name %></div></h2>
-
+	<h2><%= @list.name %></h2>
   <button id="edit-list-name">edit list name</button>
-
-	<div id="list-name-form" style="display: none;">
-		<%= form_for(@list) do |form| %>
-    <%= form.text_field :name, placeholder: "name"%>
+		<%= form_for(@list, html: {class: "list_name_update_form"}) do |form| %>
+    <%= form.text_field :name %>
     <%= form.submit "update name" %>
 		<% end %>
-    <button id="cancel-edit-list-name">cancel</button>
+  <button id="cancel-edit-list-name">cancel</button>
 	</div>
 </div>
 
 <ul>
 	<% @items.each do |item| %>
 		<li class="item">
-			<h3>
-				<div class="item-name-current">
-					<%= item.name%>
-				</div>
-			</h3>
+			<h3><%= item.name%></h3>
 			<button class="edit-item-name">edit item name</button>
-			<div class="item-name-form" style="background-color: red; display: none;">
 				<%= form_for item, html: {class: "item_name_update_form"}, url: list_item_path(@list.id, id: item.id), method: :put do |form| %>
 				  <%= form.text_field :name %>
 				  <%= form.submit "Update Name" %>
 				<% end %>
-			</div>
+				<button class="cancel-edit-item-name">cancel</button>
 			<%= button_to "delete item", list_item_path(@list.id, id: item.id), method: :delete %>
 		</li>
 	<% end %>

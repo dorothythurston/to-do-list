@@ -8,4 +8,6 @@ $(document).on('submit','.item_name_update_form', function (event) {
     data: values,
     dataType: "JSON"
   });
+  var newName = $('input#item_name', this).val();
+  $('h3', $(this).parent()).text(newName);
 });

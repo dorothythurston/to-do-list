@@ -24,12 +24,19 @@ h1, h2 {
   color: magenta;
   }
 
-#list-name-form form input {
+.list_name_update_form input {
   font-size: 1.5em;
+}
 
+.item_name_update_form input {
+  font-size: 1.1em;
 }
 
 .item-image img {
   height: 100px;
   width: auto;
+}
+
+.item_name_update_form, .list_name_update_form {
+  display: none;
 }

@@ -1,19 +1,19 @@
 $(document).on('click','#edit-list-name',function () {
-    $('#list-name-form').toggle();
+    $('.list_name_update_form').toggle();
     $('#edit-list-name').toggle();
-    $('#list-name-current').toggle();
+    $('h2').toggle();
   });
 
-$(document).on('click','#list-name-form #cancel-edit-list-name', function () {
-    $('#list-name-form').toggle();
+$(document).on('click','#cancel-edit-list-name', function () {
+    $('.list_name_update_form').toggle();
     $('#edit-list-name').toggle();
-    $('#list-name-current').toggle();
-    var oldName = $("#list-name-current").text();
+    $('h2').toggle();
+    var oldName = $("h2").text();
     $("#list_name").val(oldName);
   });
 
-$(document).on('submit','#list-name-form form', function () {
-  $('#list-name-form').toggle();
+$(document).on('click','.cancel-edit-list-name', function () {
+  $('.list_name_update_form').toggle();
   $('#edit-list-name').toggle();
-  $('#list-name-current').toggle();
+  $('h2').toggle();
 });
