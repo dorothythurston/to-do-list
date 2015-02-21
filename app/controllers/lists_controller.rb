@@ -7,7 +7,7 @@ class ListsController < ApplicationController
 
 	def show
     @list = List.find(params[:id])
-    @items = @list.items
+    @items = @list.items.order(created_at: :desc)
   end
 
   def create

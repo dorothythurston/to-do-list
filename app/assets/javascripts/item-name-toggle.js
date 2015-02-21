@@ -11,7 +11,7 @@ $(document).on('submit','.item_name_update_form', function () {
   $('.item_name_update_form', parent).toggle();
   $('.edit-item-name', parent).toggle();
   $('.cancel-edit-item-name', parent).toggle();
-  $('h3').toggle();
+  $('h3', parent).toggle();
 });
 
 $(document).on('click','.cancel-edit-item-name', function () {
