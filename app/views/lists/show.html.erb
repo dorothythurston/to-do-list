@@ -1,4 +1,4 @@
-<%=link_to "back to dashboard", root_path%>
+<%=link_to "<- back", root_path%>
 <br>
 <div id="list-name">
 	<h2><%= @list.name %></h2>
@@ -11,22 +11,19 @@
 	</div>
 </div>
 
+<button id="add-item">add new item</button>
+
 <ul>
-	<% @items.each do |item| %>
-		<li class="item">
-			<h3><%= item.name%></h3>
-			<button class="edit-item-name">edit item name</button>
-				<%= form_for item, html: {class: "item_name_update_form"}, url: list_item_path(@list.id, id: item.id), method: :put do |form| %>
-				  <%= form.text_field :name %>
-				  <%= form.submit "Update Name" %>
-				<% end %>
-				<button class="cancel-edit-item-name">cancel</button>
-			<%= button_to "delete", list_item_path(@list.id, id: item.id), method: :delete %>
-		</li>
-	<% end %>
+	<li class="new_item_form">
+		<%= form_for([@list, @new_item]) do |form| %>
+			<%= form.text_field :name, placeholder: "name"%>
+			<%= form.text_field :description, placeholder: "description" %>
+			<%= form.text_field :url, placeholder: "add an optional url for image"%>
+			<%= form.submit "Create Item" %>
+		<% end %>
+	</li>
+	<%= render @items %>
 </ul>
 
-<br>
-<%=link_to "add item", new_list_item_path(@list) %>
 <br>
 <%=link_to "delete list", @list, method: :delete%>

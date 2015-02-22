@@ -1,22 +1,15 @@
 class ListsController < ApplicationController
   respond_to :html, :js
 
-	def new
-		@list = List.new
-	end
-
 	def show
     @list = List.find(params[:id])
     @items = @list.items.order(created_at: :desc)
+    @new_item = Item.new
   end
 
   def create
     @list = List.create(list_params)
     render @list
-  end
-
-  def edit
-    @list = List.find(params[:id])
   end
 
   def update

@@ -1,0 +1,12 @@
+<li class="item">
+  <h3><%= item.name%></h3>
+  <button class="edit-item-name">edit item name</button>
+    <%= form_for item, html: {class: "item_name_update_form"}, url: list_item_path(@list.id, id: item.id), method: :put do |form| %>
+      <%= form.text_field :name %>
+      <%= form.text_field :description, placeholder: "Description" %>
+    	<%= form.text_field :url, placeholder: "Add a Url Image of this Item"%>
+      <%= form.submit "update item" %>
+    <% end %>
+    <button class="cancel-edit-item-name">cancel</button>
+  <%= button_to "delete", list_item_path(@list.id, id: item.id), method: :delete %>
+</li>

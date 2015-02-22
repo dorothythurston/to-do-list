@@ -1,19 +1,10 @@
 class ItemsController < ApplicationController
 	respond_to :html, :js
 
-	def new
-		@item = Item.new
-		@list = List.find(params[:list_id])
-	end
-
 	def create
     @list = List.find(params[:list_id])
     @item = @list.items.create(item_params)
-	    if @item.save
-	      redirect_to @list
-	    else
-	     render :new
-	    end
+		render @item
   	end
 
   def show
