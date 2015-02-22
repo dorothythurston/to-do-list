@@ -2,11 +2,11 @@
 <br>
 <div id="list-name">
 	<h2><%= @list.name %></h2>
-		<%= form_for(@list, html: {class: "list_name_update_form"}) do |form| %>
+		<%= form_for(@list, html: {class: "update_list_form"}) do |form| %>
     <%= form.text_field :name %>
-    <%= form.submit "update name" %>
+    <%= form.submit "update" %>
 		<% end %>
-		<button id="edit-list-name">edit list name</button>
+		<button id="edit-list-name">edit</button>
 </div>
 
 <button id="add-item">add new item</button>
@@ -15,9 +15,7 @@
 	<li class="new_item_form">
 		<%= form_for([@list, @new_item]) do |form| %>
 			<%= form.text_field :name, placeholder: "name"%>
-			<%= form.text_field :description, placeholder: "description" %>
-			<%= form.text_field :url, placeholder: "add an optional url for image"%>
-			<%= form.submit "Create Item" %>
+			<%= form.submit "add" %>
 		<% end %>
 	</li>
 	<%= render @items %>

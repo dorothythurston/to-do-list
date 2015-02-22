@@ -4,9 +4,9 @@ $(document).on('click','#add-item',function () {
       $('.new_item_form').show( 300 );
     }
     else {
-      $('#add-item').text('add new item');
+      $('#add-item').text('add');
       $('.new_item_form').hide( 300 );
-      $('#item_name', this).val('');
+      $('#item_name').val('');
     };
 });
 
@@ -22,8 +22,9 @@ $(document).on('submit','.new_item_form form', function (event) {
     data: values,
     dataType: "HTML"
   }).done(function(response) {
-    $('.new_item_form').toggle();
-    $('#add-item').text('add new item');
+    $('.new_item_form').toggle ();
+    $('#add-item').text('add');
+    $('#item_name').val('');
     $(response).insertAfter('.new_item_form');
   });
 });

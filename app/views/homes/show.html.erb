@@ -6,7 +6,7 @@
   <li class="new_list_form">
     <%= form_for(@list) do |form| %>
       <%= form.text_field :name, placeholder: "name this list"%>
-      <%= form.submit "add new list" %>
+      <%= form.submit "add" %>
     <% end %>
   </li>
   <%= render @lists %>

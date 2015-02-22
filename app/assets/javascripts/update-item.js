@@ -1,13 +1,13 @@
-$(document).on('click','.edit-item-name', function () {
+$(document).on('click','.edit-item', function () {
   var parent = $(this).parent();
-  if  ($('.item_name_update_form', parent).is(':hidden')) {
-    $('.edit-item-name', parent).text('cancel');
+  if  ($('.update_item_form', parent).is(':hidden')) {
+    $('.edit-item', parent).text('cancel');
     $('h3', parent).toggle();
-    $('.item_name_update_form', parent).show( 300 );
+    $('.update_item_form', parent).show( 300 );
   }
   else {
-    $('.edit-item-name', parent).text('edit item name');
-    $('.item_name_update_form', parent).hide( 300 );
+    $('.edit-item', parent).text('edit');
+    $('.update_item_form', parent).hide( 300 );
     $('#item_name', this).val('');
     $('h3', parent).show( 200 );
     var oldName = $('h3', parent).text();
@@ -15,10 +15,12 @@ $(document).on('click','.edit-item-name', function () {
   };
 });
 
-$(document).on('submit','.item_name_update_form', function (event) {
+$(document).on('submit','.update_item_form', function (event) {
   event.preventDefault();
     var values = $(this).serialize(),
       url = $(this).attr('action');
+
+      console.log(values)
   $.ajax({
     type: "POST",
     url: url,
@@ -26,10 +28,10 @@ $(document).on('submit','.item_name_update_form', function (event) {
     dataType: "JSON"
   });
   var newName = $('input#item_name', this).val(),
-     parent = $(this).parent();
+    parent = $(this).parent();
 
   $('h3', parent).text(newName);
-  $('.item_name_update_form', parent).hide ( 300 );
-  $('.edit-item-name', parent).text('edit item');
+  $('.update_item_form', parent).hide ( 300 );
+  $('.edit-item', parent).text('edit');
   $('h3', parent).show( 200 );
 });

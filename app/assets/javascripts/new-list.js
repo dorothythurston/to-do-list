@@ -1,6 +1,6 @@
 $(document).on('click','#add-list',function () {
     if  ($('.new_list_form').is(':hidden')) {
-      $('#add-list').text('-');
+      $('#add-list').text('cancel');
       $( 'li:hidden' ).show( 300 );
     }
     else {

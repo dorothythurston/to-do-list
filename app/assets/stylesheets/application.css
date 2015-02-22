@@ -24,11 +24,16 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: none;
+  color: red;
+}
+
 h1, h2 {
   color: magenta;
   }
 
-.list_name_update_form input {
+.update_list_form input {
   font-size: 1.5em;
 }
 
@@ -36,17 +41,12 @@ h1, h2 {
   font-size: .9em;
 }
 
-.item_name_update_form input, .new_item_form input {
+.update_item_form input, .new_item_form input {
   font-size: 1.1em;
 }
 
-.item-image img {
-  height: 100px;
-  width: auto;
-}
-
-.new_list_form, .new_item_form, .item_name_update_form, .list_name_update_form, #cancel-edit-list-name, #cancel-add-list, .cancel-edit-item-name {
-  display: none;
+.new_list_form, .update_list_form, .new_item_form, .update_item_form {
+ display: none;
 }
 
 .hidden {
