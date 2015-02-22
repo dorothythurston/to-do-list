@@ -7,16 +7,6 @@ class ItemsController < ApplicationController
 		render @item
   	end
 
-  def show
-    @item = Item.find(params[:id])
-    @list = List.find(params[:list_id])
-  end
-
-  def edit
-    @item = Item.find(params[:id])
-    @list = List.find(params[:list_id])
-  end
-
   def update
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
