@@ -2,13 +2,11 @@
 <br>
 <div id="list-name">
 	<h2><%= @list.name %></h2>
-  <button id="edit-list-name">edit list name</button>
 		<%= form_for(@list, html: {class: "list_name_update_form"}) do |form| %>
     <%= form.text_field :name %>
     <%= form.submit "update name" %>
 		<% end %>
-  <button id="cancel-edit-list-name">cancel</button>
-	</div>
+		<button id="edit-list-name">edit list name</button>
 </div>
 
 <button id="add-item">add new item</button>

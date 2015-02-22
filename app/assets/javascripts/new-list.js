@@ -1,7 +1,7 @@
 $(document).on('click','#add-list',function () {
     if  ($('.new_list_form').is(':hidden')) {
       $('#add-list').text('-');
-      $( "li:hidden" ).show( 300 );
+      $( 'li:hidden' ).show( 300 );
     }
     else {
       $('#add-list').text('+');
@@ -24,7 +24,7 @@ $(document).on('submit','.new_list_form form', function (event) {
     dataType: "HTML"
   }).done(function(response) {
     $(response).insertAfter('.new_list_form');
-    $('.new_list_form').toggle();
+    $('.new_list_form').hide( 200 );
     $('#list_name').val('');
     $('#add-list').text('+');
   });

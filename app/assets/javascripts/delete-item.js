@@ -8,5 +8,6 @@ $(document).on('submit','.button_to', function (event) {
     data: values,
     dataType: "JSON"
   });
-  $(this).parent().remove();
+  var item = $(this).parent()
+  $(item).hide('slow', function(){ $(item).remove(); });
 });
