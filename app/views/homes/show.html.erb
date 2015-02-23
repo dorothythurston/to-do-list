@@ -1,12 +1,10 @@
-<h1>Welcome</h1>
-<h2>My Lists:</h2>
-<button id="add-list">+</button>
-
+<h1>My Lists</h1>
+<button id="add-list">add</button>
 <ul>
   <li class="new_list_form">
     <%= form_for(@list) do |form| %>
       <%= form.text_field :name, placeholder: "name this list"%>
-      <%= form.submit "add" %>
+      <%= form.submit "✓" %>
     <% end %>
   </li>
   <%= render @lists %>

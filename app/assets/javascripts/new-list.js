@@ -4,7 +4,7 @@ $(document).on('click','#add-list',function () {
       $( 'li:hidden' ).show( 300 );
     }
     else {
-      $('#add-list').text('+');
+      $('#add-list').text('add');
       $('.new_list_form').hide( 300 );
       $('#list_name').val('');
     };
@@ -26,6 +26,6 @@ $(document).on('submit','.new_list_form form', function (event) {
     $(response).insertAfter('.new_list_form');
     $('.new_list_form').hide( 200 );
     $('#list_name').val('');
-    $('#add-list').text('+');
+    $('#add-list').text('add');
   });
 });

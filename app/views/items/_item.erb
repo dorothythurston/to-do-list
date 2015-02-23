@@ -2,8 +2,7 @@
   <h3 class="item-name"><%= item.name %></h3>
     <%= form_for item, html: {class: "update_item_form"}, url: list_item_path(@list.id, id: item.id), method: :put do |form| %>
       <%= form.text_field :name, placeholder: "name this item" %>
-      <%= form.submit "update" %>
+      <%= form.submit "✓" %>
     <% end %>
-  <button class="edit-item">edit</button>
-  <%= button_to "delete", list_item_path(@list.id, id: item.id), method: :delete %>
+  <%= button_to "delete", list_item_path(@list.id, id: item.id), {:method => :delete, :form_class => "delete-item"}%>
 </li>

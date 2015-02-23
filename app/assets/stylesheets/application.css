@@ -33,6 +33,10 @@ h1, h2 {
   color: magenta;
   }
 
+.delete-item {
+  color: red;
+}
+
 .update_list_form input {
   font-size: 1.5em;
 }
@@ -45,7 +49,7 @@ h1, h2 {
   font-size: 1.1em;
 }
 
-.new_list_form, .update_list_form, .new_item_form, .update_item_form {
+.new_list_form, .update_list_form, .new_item_form, .update_item_form, .delete-item, .delete-list {
  display: none;
 }
 

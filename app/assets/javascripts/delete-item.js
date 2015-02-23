@@ -1,4 +1,4 @@
-$(document).on('submit','.button_to', function (event) {
+$(document).on('submit','.delete-item', function (event) {
   event.preventDefault();
     var values = $(this).serialize(),
       url = $(this).attr('action');

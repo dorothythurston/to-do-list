@@ -1,25 +1,21 @@
-<%=link_to "<- back", root_path%>
-<br>
 <div id="list-name">
 	<h2><%= @list.name %></h2>
 		<%= form_for(@list, html: {class: "update_list_form"}) do |form| %>
     <%= form.text_field :name %>
-    <%= form.submit "update" %>
+    <%= form.submit "✓" %>
 		<% end %>
-		<button id="edit-list-name">edit</button>
+		<%=button_to "delete list", @list, {:method => :delete, :form_class => "delete-list"} %>
 </div>
 
-<button id="add-item">add new item</button>
+<button id="add-item">add</button>
 
 <ul>
 	<li class="new_item_form">
 		<%= form_for([@list, @new_item]) do |form| %>
 			<%= form.text_field :name, placeholder: "name"%>
-			<%= form.submit "add" %>
+			<%= form.submit "✓" %>
 		<% end %>
 	</li>
 	<%= render @items %>
 </ul>
-
-<br>
-<%=link_to "delete list", @list, method: :delete%>
+<%=link_to "↵", root_path%>
