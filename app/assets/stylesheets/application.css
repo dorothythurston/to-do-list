@@ -18,26 +18,36 @@
 
 * {
   font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:hover {
   text-decoration: none;
-  color: red;
+  color: green;
+}
+
+h3:hover {
+  color: green;
 }
 
 h1, h2 {
-  color: magenta;
-  }
-
-.delete-item {
-  color: red;
+  color: grey;
 }
 
-.update_list_form input {
+h2, .update_list_form input {
   font-size: 1.5em;
 }
 
