@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   def update
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
-		render :nothing => true
+		render @item
   end
 
   def destroy

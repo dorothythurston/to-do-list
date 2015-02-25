@@ -15,22 +15,22 @@ $(document).on('click','.item-name', function () {
 });
 
 $(document).on('submit','.update_item_form', function (event) {
-  event.preventDefault();
+    event.preventDefault();
     var values = $(this).serialize(),
       url = $(this).attr('action');
-
-      console.log(values)
   $.ajax({
     type: "POST",
     url: url,
     data: values,
-    dataType: "JSON"
-  });
-  var newName = $('input#item_name', this).val(),
-    parent = $(this).parent();
+    dataType: "HTML"
+  }).done(function(response) {
+      console.log(response)
+    var newName = $('input#item_name', this).val(),
+      parent = $(this).parent();
 
-  $('h3', parent).text(newName);
-  $('.update_item_form', parent).hide ( 300 );
-  $('.delete-item', parent).hide( 200 );
-  $('h3', parent).show( 200 );
+    $('h3', parent).text(newName);
+    $('.update_item_form', parent).hide ( 300 );
+    $('.delete-item', parent).hide( 200 );
+    $('h3', parent).show( 200 );
+  });
 });
