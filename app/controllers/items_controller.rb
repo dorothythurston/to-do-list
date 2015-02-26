@@ -10,7 +10,10 @@ class ItemsController < ApplicationController
   def update
     @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
-		render @item
+		if @item
+			@item.update_attributes(item_params)
+		end
+		render :nothing => true
   end
 
   def destroy
@@ -25,7 +28,6 @@ private
   def item_params
     params.require(:item).permit(
       :name,
-      :description,
       :list_id
     )
   end

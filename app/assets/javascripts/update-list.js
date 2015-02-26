@@ -1,6 +1,6 @@
 $(document).on('click','h2',function () {
   if  ($('.update_list_form').is(':hidden')) {
-    $('h2').toggle();
+    $('h2').hide( 200 );
     $('.update_list_form').show( 300 );
     $('.delete-list').toggle();
     $('#add-item').hide( 100 );
@@ -23,7 +23,7 @@ $(document).on('submit','.update_list_form', function (event) {
     type: "POST",
     url: url,
     data: values,
-    dataType: "JSON"
+    dataType: "HTML"
   });
   var newName = $('#list_name').val();
   $('h2').text(newName);

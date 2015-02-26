@@ -14,6 +14,9 @@ class ListsController < ApplicationController
 
   def update
     @list = List.find(params[:id])
+    if @list
+			@list.update_attributes(list_params)
+		end
     render :nothing => true
   end
 
