@@ -17,8 +17,10 @@ $(document).on('click','h2',function () {
 
 $(document).on('submit','.update_list_form', function (event) {
   event.preventDefault();
-    var values = $(this).serialize(),
-      url = $(this).attr('action');
+  
+  var values = $(this).serialize(),
+  url = $(this).attr('action');
+
   $.ajax({
     type: "POST",
     url: url,

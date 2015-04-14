@@ -4,5 +4,6 @@
       <%= form.text_field :name, placeholder: "name this item" %>
       <%= form.submit "✓" %>
     <% end %>
+    
   <%= button_to "delete", list_item_path(@list.id, id: item.id), {:method => :delete, :form_class => "delete-item"}%>
 </li>

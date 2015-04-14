@@ -14,7 +14,7 @@ $(document).on('submit','.new_item_form form', function (event) {
   event.preventDefault();
 
   var values = $(this).serialize(),
-      url = $(this).attr('action');
+  url = $(this).attr('action');
 
   $.ajax({
     type: "POST",

@@ -1,5 +1,6 @@
 $(document).on('click','.item-name', function () {
   var parent = $(this).parent();
+
   if  ($('.update_item_form', parent).is(':hidden')) {
     $('h3', parent).toggle();
     $('.update_item_form', parent).toggle();
@@ -18,7 +19,7 @@ $(document).on('submit','.update_item_form', function (event) {
   event.preventDefault();
 
   var values = $(this).serialize(),
-    url = $(this).attr('action');
+  url = $(this).attr('action');
 
   $.ajax({
     type: "POST",
