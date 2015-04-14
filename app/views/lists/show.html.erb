@@ -5,7 +5,7 @@
     <%= form.text_field :name %>
     <%= form.submit "✓" %>
   <% end %>
-  
+
   <%=button_to "delete", @list, {:method => :delete, :form_class => "delete-list"} %>
 </div>
 
@@ -13,12 +13,12 @@
 
 <ul>
   <li class="new_item_form">
-  	<%= form_for([@list, @new_item]) do |form| %>
-  	  <%= form.text_field :name, placeholder: "name"%>
-  	  <%= form.submit "✓" %>
-  	<% end %>
+    <%= form_for([@list, @new_item]) do |form| %>
+      <%= form.text_field :name, placeholder: "name"%>
+      <%= form.submit "✓" %>
+    <% end %>
   </li>
-	<%= render @items %>
+  <%= render @items %>
 </ul>
 
 <%=link_to "↵", root_path%>
